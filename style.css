@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 15px;
+    overflow-x: hidden;
+    background-color: #f4eae1;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button,
+canvas {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background: #ffffff;
+    border: 4px solid #d9c5b2;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #d35400;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    color: #6c7778;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.status-bar {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #fff9f2;
+    border: 2px solid #f1c40f;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.score-color {
+    color: #d35400;
+}
+
+.level-color {
+    color: #2878a9;
+}
+
+.canvas-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: #edf7f9;
+    border: 3px solid #34495e;
+    border-radius: 16px;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    background: linear-gradient(to bottom, #e0f2f1, #ffffff);
+}
+
+.controls-container {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.ctrl-btn {
+    min-width: 0;
+    flex: 1;
+    padding: 22px 10px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #287fb9;
+    box-shadow: 0 8px 0 #226b9a;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 700;
+    touch-action: manipulation;
+    transition: transform 0.05s;
+}
+
+.ctrl-btn-left {
+    background-color: #df7114;
+    box-shadow: 0 8px 0 #bd4b00;
+}
+
+.ctrl-btn:active,
+.ctrl-btn.is-active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #226b9a;
+}
+
+.ctrl-btn-left:active,
+.ctrl-btn-left.is-active {
+    box-shadow: 0 4px 0 #bd4b00;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-title {
+    color: #a94f31;
+    font-size: 30px;
+}
+
+.gameover-title {
+    color: #d83d2f;
+    font-size: 36px;
+}
+
+.rules-box {
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+    background: #fdfaf4;
+    border-left: 6px solid #df7114;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.rules-box li {
+    margin-bottom: 8px;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.rules-box li:last-child {
+    margin-bottom: 0;
+}
+
+.control-tip {
+    color: #6c7778;
+    font-size: 16px;
+}
+
+.btn-main {
+    margin-top: 20px;
+    padding: 18px 45px;
+    border: 0;
+    border-radius: 50px;
+    background-color: #25a95b;
+    box-shadow: 0 6px 0 #208b4c;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.btn-main:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #208b4c;
+}
+
+.btn-restart {
+    background-color: #df7114;
+    box-shadow: 0 6px 0 #bd4b00;
+}
+
+.btn-restart:active {
+    box-shadow: 0 2px 0 #bd4b00;
+}
+
+.final-label {
+    margin-top: 5px;
+    color: #6c7778;
+    font-size: 20px;
+}
+
+.score-huge {
+    margin: 15px 0;
+    color: #df7114;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.evaluation-text {
+    padding: 0 10px;
+    color: #208b4c;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .status-bar {
+        padding: 9px 7px;
+        font-size: 17px;
+    }
+
+    .overlay {
+        padding: 15px;
+    }
+
+    .start-title {
+        font-size: 24px;
+    }
+
+    .rules-box {
+        margin: 10px 0;
+        padding: 11px;
+    }
+
+    .rules-box li {
+        font-size: 15px;
+    }
+
+    .control-tip {
+        font-size: 14px;
+    }
+
+    .btn-main {
+        margin-top: 12px;
+        padding: 14px 28px;
+        font-size: 21px;
+    }
+
+    .controls-container {
+        gap: 12px;
+    }
+
+    .ctrl-btn {
+        padding: 17px 6px;
+        font-size: 21px;
+    }
+}

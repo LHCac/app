@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>銀髮智遊：樂活動感接接樂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>銀髮智遊：樂活動感接接樂</h1>
+        <p class="subtitle">手眼協調大挑戰！動動左右腦，看準再接住！</p>
+
+        <section class="status-bar" aria-label="遊戲狀態">
+            <div>分數：<span id="score-display" class="score-color">0</span></div>
+            <div>關卡：<span id="level-display" class="level-color">1</span></div>
+            <div>生命：<span id="lives-display" aria-label="3 條生命">❤️❤️❤️</span></div>
+        </section>
+
+        <section class="canvas-container" aria-label="遊戲區域">
+            <canvas id="gameCanvas" width="400" height="400">
+                您的瀏覽器不支援 Canvas，請改用較新的瀏覽器。
+            </canvas>
+
+            <div id="start-overlay" class="overlay">
+                <h2 class="start-title">🧠 腦力與反應力大賽 🍎</h2>
+                <ul class="rules-box">
+                    <li>🟢 <strong>接住健康（＋10分）：</strong>🍎 水果、🥦 蔬菜。</li>
+                    <li>👑 <strong>超級黃金（＋30分以上）：</strong>🌟 星星、👑 皇冠。</li>
+                    <li>❌ <strong>避開危險（扣生命）：</strong>💣 炸彈、🍟 垃圾食物。</li>
+                    <li>📈 <strong>難度增加：</strong>分數越高，東西掉落速度越快！</li>
+                </ul>
+                <p class="control-tip">可以使用鍵盤左右鍵 ⬅️ ➡️ 或下方大按鈕控制</p>
+                <button id="start-button" class="btn-main" type="button">開始挑戰（點我）</button>
+            </div>
+
+            <div id="gameover-overlay" class="overlay hidden">
+                <h2 class="gameover-title">比賽結束！</h2>
+                <p class="final-label">您今天的精彩總得分：</p>
+                <div class="score-huge"><span id="final-score">0</span></div>
+                <p id="evaluation-text" class="evaluation-text"></p>
+                <button id="restart-button" class="btn-main btn-restart" type="button">再接再厲（點我）</button>
+            </div>
+        </section>
+
+        <section class="controls-container" aria-label="移動控制">
+            <button class="ctrl-btn ctrl-btn-left" id="btn-left" type="button">⬅️ 往左移</button>
+            <button class="ctrl-btn" id="btn-right" type="button">往右移 ➡️</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
